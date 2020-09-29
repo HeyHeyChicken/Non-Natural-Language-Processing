@@ -106,10 +106,58 @@ NNLP.addAction("music.next", function(_intent, _result){
 6) Let the magic happen.
 ```javascript
 console.log(NNLP.process("Je ne sais pas quoi te demander"));
+{
+  utterance: 'Je ne sais pas quoi te demander',
+  intent: 'none',
+  variables: null,
+  answers: undefined,
+  answer: undefined
+}
+```
+```javascript
 console.log(NNLP.process("Mets de la musique"));
+Ok, je lance une musique aléatoire !
+{
+  utterance: 'Mets de la musique',
+  intent: 'music.play',
+  variables: {},
+  answers: [ 'Ok', "C'est parti" ],
+  answer: 'Ok'
+}
+```
+```javascript
 console.log(NNLP.process("Musique suivante"));
+{
+  utterance: 'Musique suivante',
+  intent: 'music.next',
+  variables: {},
+  answers: [],
+  answer: "Il n'y a plus de musiques disponibles."
+}
+```
+```javascript
 console.log(NNLP.process("Mets la musique Crossfire"));
+{
+  utterance: 'Mets la musique Crossfire',
+  intent: 'music.play.specific.name',
+  variables: { name: 'Crossfire' },
+  answers: [ 'Très bien, voici %name%.', 'OK, voici %name%.', 'Voici %name%.' ],
+  answer: 'Très bien, voici Crossfire.'
+}
+```
+```javascript
 console.log(NNLP.process("Mets la musique No Beef de Afrojack"));
+{
+  utterance: 'Mets la musique No Beef de Afrojack',
+  intent: 'music.play.specific.name.artist',
+  variables: { name: 'No Beef', artist: 'Afrojack' },
+  answers: [
+    "Très bien, voici %name% de l'artiste %artist%.",
+    "OK, voici %name% de l'artiste %artist%.",
+    "Voici %name% de l'artiste %artist%."
+  ],
+  answer: "Très bien, voici No Beef de l'artiste Afrojack."
+}
 ```
 
 <br>
