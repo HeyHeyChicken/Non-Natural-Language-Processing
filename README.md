@@ -2,10 +2,11 @@
  
 <img src="https://github.com/HeyHeyChicken/Non-Natural-Language-Processing/blob/master/resources/github-logo.png" alt="NOVA" width="600">
 <br/>
-**Non-Natural-Language-Processing** is a general non natural language utility in JS. Currently supporting:
-- Extract variables
-- Multi language
-- No training required
+</div>
+**Non-Natural-Language-Processing** is a general non natural language utility in JS. Currently supporting:<br/>
+- Extract variables<br/>
+- Multi language<br/>
+- No training required<br/>
 
 ## Usage
 
