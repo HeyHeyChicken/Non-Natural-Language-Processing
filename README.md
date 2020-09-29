@@ -156,7 +156,7 @@ console.log(NNLP.process("Mets la musique No Beef de Afrojack"));
     "OK, voici %name% de l'artiste %artist%.",
     "Voici %name% de l'artiste %artist%."
   ],
-  answer: "Très bien, voici No Beef de l'artiste Afrojack."
+  answer: "OK, voici No Beef de l'artiste Afrojack."
 }
 ```
 
