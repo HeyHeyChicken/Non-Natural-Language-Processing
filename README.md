@@ -18,11 +18,11 @@ const LIBRARIES = {
     NNLP: require("./src/NNLP")
 };
 ```
-2) Instantiate.
+2) Instantiate
 ```javascript
 const NNLP = new LIBRARIES.NNLP();
 ```
-3) Define a corpus
+3) Define a corpus.
 ```javascript
 const CORPUS = [
     {
