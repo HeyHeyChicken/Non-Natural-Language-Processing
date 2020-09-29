@@ -55,7 +55,7 @@ const CORPUS = [
     {
         "intent": "music.play.specific.name.artist",
         "utterances": [
-            "Mets la musique {name} de {artist|0}",
+            "Mets la musique {name} de {artist}",
         ],
         "answers": [
             "Très bien, voici %name% de l'artiste %artist%.",

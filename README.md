@@ -27,6 +27,17 @@ const NNLP = new LIBRARIES.NNLP();
 ```javascript
 const CORPUS = [
     {
+        "intent": "music.play.specific.name.artist",
+        "utterances": [
+            "Mets la musique {name} de {artist}",
+        ],
+        "answers": [
+            "Très bien, voici %name% de l'artiste %artist%.",
+            "OK, voici %name% de l'artiste %artist%.",
+            "Voici %name% de l'artiste %artist%."
+        ]
+    },
+    {
         "intent": "music.play",
         "utterances": [
             "Remets la musique",
@@ -71,17 +82,6 @@ const CORPUS = [
         ]
     },
     {
-        "intent": "music.play.specific.name.artist",
-        "utterances": [
-            "Mets la musique {name} de {artist|0}",
-        ],
-        "answers": [
-            "Très bien, voici %name% de l'artiste %artist%.",
-            "OK, voici %name% de l'artiste %artist%.",
-            "Voici %name% de l'artiste %artist%."
-        ]
-    },
-    {
         "intent": "music.play.specific.name",
         "utterances": [
             "Mets la musique {name}"
@@ -110,6 +110,21 @@ NNLP.addAction("music.next", function(_intent, _result){
 });
 ```
 6) Let the magic happen.
+
+```javascript
+console.log(NNLP.process("Mets la musique No Beef de Afrojack"));
+{
+  utterance: 'Mets la musique No Beef de Afrojack',
+  intent: 'music.play.specific.name.artist',
+  variables: { name: 'No Beef', artist: 'Afrojack' },
+  answers: [
+    "Très bien, voici %name% de l'artiste %artist%.",
+    "OK, voici %name% de l'artiste %artist%.",
+    "Voici %name% de l'artiste %artist%."
+  ],
+  answer: "OK, voici No Beef de l'artiste Afrojack."
+}
+```
 ```javascript
 console.log(NNLP.process("Je ne sais pas quoi te demander"));
 {
@@ -149,20 +164,6 @@ console.log(NNLP.process("Mets la musique Crossfire"));
   variables: { name: 'Crossfire' },
   answers: [ 'Très bien, voici %name%.', 'OK, voici %name%.', 'Voici %name%.' ],
   answer: 'Très bien, voici Crossfire.'
-}
-```
-```javascript
-console.log(NNLP.process("Mets la musique No Beef de Afrojack"));
-{
-  utterance: 'Mets la musique No Beef de Afrojack',
-  intent: 'music.play.specific.name.artist',
-  variables: { name: 'No Beef', artist: 'Afrojack' },
-  answers: [
-    "Très bien, voici %name% de l'artiste %artist%.",
-    "OK, voici %name% de l'artiste %artist%.",
-    "Voici %name% de l'artiste %artist%."
-  ],
-  answer: "OK, voici No Beef de l'artiste Afrojack."
 }
 ```
 
